@@ -91,5 +91,47 @@ public class XMLConfigHolder extends XMLConfigBase implements XMLConfHolder {
 
         return new ArrayList<>();
     }
+    
+	@Override
+	public int getIntorDefault(String key, int defaultValue) {
+		if (!holder.containsKey(key)) return defaultValue;
+		try {
+			return Integer.parseInt(holder.get(key));
+		}catch(Exception e) {
+			return defaultValue;
+		}
+	}
+	@Override
+	public boolean getBooleanorDefault(String key, boolean defaultValue) {
+		if (!holder.containsKey(key)) return defaultValue;
+		try {
+			return Boolean.parseBoolean(holder.get(key));
+		}catch(Exception e) {
+			return defaultValue;
+		}
+	}
+	@Override
+	public String getStringorDefault(String key, String defaultValue) {
+		if (!holder.containsKey(key)) return defaultValue;
+		return holder.get(key);
+	}
+	@Override
+	public long getLongorDefault(String key, long defaultValue) {
+		if (!holder.containsKey(key)) return defaultValue;
+		try {
+			return Long.parseLong(holder.get(key));
+		}catch(Exception e) {
+			return defaultValue;
+		}
+	}
+	@Override
+	public double getDoubleorDefault(String key, double defaultValue) {
+		if (!holder.containsKey(key)) return defaultValue;
+		try {
+			return Double.parseDouble(holder.get(key));
+		}catch(Exception e) {
+			return defaultValue;
+		}
+	}
 
 }

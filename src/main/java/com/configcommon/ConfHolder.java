@@ -26,30 +26,41 @@ public interface ConfHolder {
 	 * @return 转换为int的对应的配置值
 	 */
 	public int getInt(String key);
+	
+	public int getIntorDefault(String key, int defaultValue);
+	
 	/**
 	 * 获取boolean类型的配置数据
 	 * @param key 需要获取的配置名称
 	 * @return 转换为boolean的对应的配置值
 	 */
 	public boolean getBoolean(String key);
+	
+	public boolean getBooleanorDefault(String key, boolean defaultValue);
 	/**
 	 * 获取String类型的配置数据
 	 * @param key 需要获取的配置名称
 	 * @return 对应的配置值
 	 */
 	public String getString(String key);
+	
+	public String getStringorDefault(String key, String defaultValue);
 	/**
 	 * 获取long类型的配置数据
 	 * @param key 需要获取的配置名称
 	 * @return 转换为long的对应的配置值
 	 */
 	public long getLong(String key);
+	
+	public long getLongorDefault(String key, long defaultValue);
 	/**
 	 * 获取double类型的配置数据
 	 * @param key 需要获取的配置名称
 	 * @return 转换为double的对应配置值
 	 */
 	public double getDouble(String key);
+	
+	public double getDoubleorDefault(String key, double defaultValue);
 	/**
 	 * 配置文件中可能存在\<text\>a,b,c,d\</text\>这类形式，getStringArray方法
 	 * 可以将这种形式的配置切成字符串数组并返回
