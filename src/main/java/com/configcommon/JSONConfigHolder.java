@@ -1,6 +1,7 @@
 package com.configcommon;
 
 import java.io.File;
+import java.io.InputStream;
 
 /**
  * 对JSON文件进行解析，将JSON文件中的配置归档
@@ -49,6 +50,12 @@ public class JSONConfigHolder extends ConfigBase {
 	public double getDoubleorDefault(String key, double defaultValue) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public void paser(InputStream is) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

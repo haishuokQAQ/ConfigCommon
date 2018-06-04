@@ -1,6 +1,7 @@
 package com.configcommon;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,12 @@ public interface ConfHolder {
 	 * @param file 传入的配置文件
 	 */
 	public void parse(File file) throws Exception;
+	/**
+	 * 解析instream
+	 * @param is
+	 * @throws Exception
+	 */
+	public void paser(InputStream is) throws Exception;
 	/**
 	 * 获取int类型的配置数据
 	 * @param key 需要获取的配置名称

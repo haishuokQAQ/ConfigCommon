@@ -2,6 +2,8 @@ package com.configcommon;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -37,5 +39,19 @@ public abstract class XMLConfigBase extends ConfigBase {
 			return null;
 		}
 		
+	}
+	
+	protected Element parseXML(InputStream is){
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder;
+		try {
+			builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(is);
+			Element root = doc.getDocumentElement();
+			return root;
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

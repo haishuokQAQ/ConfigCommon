@@ -1,6 +1,7 @@
 package com.configcommon;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class XMLConfigHolder extends XMLConfigBase implements XMLConfHolder {
 		File f = new File(path);
         parse(f);
 	}
+	
 	@Override
 	public void parse(File file) {
 		Element root = parseXML(file);
@@ -132,6 +134,12 @@ public class XMLConfigHolder extends XMLConfigBase implements XMLConfHolder {
 		}catch(Exception e) {
 			return defaultValue;
 		}
+	}
+
+	@Override
+	public void paser(InputStream is) throws Exception {
+		Element root = parseXML(is);
+		resolve(root);
 	}
 
 }
